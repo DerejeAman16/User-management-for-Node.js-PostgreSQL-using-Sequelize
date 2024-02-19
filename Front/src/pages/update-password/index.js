@@ -17,6 +17,8 @@ import BlankLayout from 'src/@core/layouts/BlankLayout'
 import { useEffect, useState } from 'react'
 
 // Styled Components
+import FooterIllustrationsV2 from 'src/views/pages/auth/FooterIllustrationsV2'
+
 const UpdatePasswordIllustration = styled('img')(({ theme }) => ({
   zIndex: 2,
   maxHeight: 650,
@@ -51,7 +53,18 @@ const LinkStyled = styled(Link)(({ theme }) => ({
   justifyContent: 'center',
   color: theme.palette.primary.main
 }))
-
+const ForgotPasswordIllustration = styled('img')(({ theme }) => ({
+  zIndex: 2,
+  maxHeight: 650,
+  marginTop: theme.spacing(12),
+  marginBottom: theme.spacing(12),
+  [theme.breakpoints.down(1540)]: {
+    maxHeight: 550
+  },
+  [theme.breakpoints.down('lg')]: {
+    maxHeight: 500
+  }
+}))
 const UpdatePassword = () => {
   // ** Hooks
   const [token, setToken] = useState(null)
@@ -108,10 +121,11 @@ const UpdatePassword = () => {
             margin: theme => theme.spacing(8, 0, 8, 8)
           }}
         >
-          <UpdatePasswordIllustration
-            alt='update-password-illustration'
-            src={`/images/pages/auth-v2-update-password-illustration-${theme.palette.mode}.png`}
+            <ForgotPasswordIllustration
+            alt='forgot-password-illustration'
+            src={`/images/pages/auth-v2-forgot-password-illustration-${theme.palette.mode}.png`}
           />
+          <FooterIllustrationsV2 />
         </Box>
       ) : null}
       <RightWrapper>
